@@ -20,7 +20,7 @@ namespace MVVM.Unity.Binding.UIBinder
         private void OnUIChanged(float newValue)
         {
             if (Property != null && !Mathf.Approximately(Property.Value, newValue))
-                Property.Update(newValue);
+                Property.SetValueWithoutNotify(ref newValue);
         }
 
         protected override void RemoveUIListner()

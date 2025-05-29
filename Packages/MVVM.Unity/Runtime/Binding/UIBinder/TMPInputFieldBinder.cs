@@ -20,7 +20,7 @@ namespace MVVM.Unity.Binding.UIBinder
         private void OnUIChanged(string newValue)
         {
             if (Property != null && Property.Value != newValue)
-                Property.Update(newValue);
+                Property.SetValueWithoutNotify(ref newValue);
         }
 
         protected override void RemoveUIListner()

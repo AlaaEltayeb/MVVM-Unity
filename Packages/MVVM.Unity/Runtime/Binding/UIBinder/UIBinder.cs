@@ -16,20 +16,19 @@ namespace MVVM.Unity.Binding.UIBinder
 
         protected virtual void Start()
         {
-            if (Property != null)
-            {
-                Property.Bind(OnViewModelChanged);
-                SetupUIListener();
-            }
+            if (Property == null)
+                return;
+
+            Property.StartObserving(OnViewModelChanged);
+            SetupUIListener();
         }
 
         protected virtual void OnDestroy()
         {
-            if (Property != null)
-            {
-                Property.Unbind(OnViewModelChanged);
-            }
+            if (Property == null)
+                return;
 
+            Property.StopObserving(OnViewModelChanged);
             RemoveUIListner();
         }
 
