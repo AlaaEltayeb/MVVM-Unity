@@ -1,0 +1,14 @@
+{
+    "name": "MVVM.Unity.External.Editor",
+    "rootNamespace": "MVVM.Unity.External.Editor",
+    "references": ["MVVM.Unity.External.Runtime"],
+    "includePlatforms": ["Editor"],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+   "noEngineReferences": false
+}

@@ -1,0 +1,14 @@
+{
+    "name": "MVVM.Unity.Demo.Editor",
+    "rootNamespace": "MVVM.Unity.Demo.Editor",
+    "references": ["MVVM.Unity.Demo.Runtime"],
+    "includePlatforms": ["Editor"],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+   "noEngineReferences": false
+}

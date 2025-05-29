@@ -1,0 +1,17 @@
+{
+    "name": "MVVM.Unity.Demo.Runtime",
+    "rootNamespace": "MVVM.Unity.Demo",
+    "references": [
+        "VContainer",
+        "MVVM.Unity.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

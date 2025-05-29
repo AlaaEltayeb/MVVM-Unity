@@ -1,0 +1,57 @@
+using JetBrains.Annotations;
+using System;
+using System.Reflection;
+using UnityEngine;
+using VContainer;
+
+namespace MVVM.Unity.MVVM
+{
+    public abstract class ViewBase<TViewModel> : MonoBehaviour, IView where TViewModel : IViewModel
+    {
+        private const string ViewModelPropertyName = "ViewModel";
+
+        protected TViewModel ViewModel { get; private set; }
+
+        [Inject]
+        [UsedImplicitly]
+        private void InjectViewModelBase(TViewModel viewModel)
+        {
+            ViewModel = viewModel;
+        }
+
+        protected virtual void Awake()
+        {
+        }
+
+        private void Start()
+        {
+            Bind();
+        }
+
+        protected virtual void Bind()
+        {
+        }
+
+        protected virtual void OnDestroy()
+        {
+            ViewModel.Dispose();
+        }
+
+        public IViewModel GetViewModel()
+        {
+            var viewType = GetType();
+            var propertyInfo =
+                viewType.GetProperty(ViewModelPropertyName, BindingFlags.NonPublic | BindingFlags.Instance);
+
+            if (propertyInfo == null)
+                throw new Exception("This view doesn't have a ViewModel, Make sure that view extends ViewBase<T>");
+
+            return propertyInfo.GetValue(this) as IViewModel;
+        }
+
+        public void Dispose()
+        {
+            Destroy(gameObject);
+        }
+    }
+}

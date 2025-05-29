@@ -1,0 +1,9 @@
+{
+    "name": "com.mvvm.unity",
+    "version": "0.1.0",
+    "displayName": "MVVM.Unity",
+    "description": "Package description",
+    "unity": "2022.2",
+    "unityRelease": "0b8",
+    "hideInEditor": false
+}
