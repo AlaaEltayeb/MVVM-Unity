@@ -16,7 +16,13 @@ namespace MVVM.Unity.Demo.BindableProperty
         protected override void Bind()
         {
             ViewModel.NameProperty.StartObserving(OnNameChanged, false);
-            _nameInputFieldBinder.Property = ViewModel.NameProperty;
+            //_nameInputFieldBinder.Property = ViewModel.NameProperty;
+            _nameInputFieldBinder.Bind(OnInputFieldChanged);
+        }
+
+        private void OnInputFieldChanged(string value)
+        {
+            ViewModel.OnNameInputChanged(value);
         }
 
         private void OnNameChanged(string oldValue, string newValue)

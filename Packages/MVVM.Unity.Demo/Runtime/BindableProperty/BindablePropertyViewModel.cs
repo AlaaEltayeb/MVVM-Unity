@@ -5,11 +5,18 @@ namespace MVVM.Unity.Demo.BindableProperty
 {
     public class BindablePropertyViewModel : ViewModelBase
     {
-        public BindableProperty<string> NameProperty { get; set; } = new();
+        private readonly BindableProperty<string> _nameProperty = new();
+
+        public IReadOnlyBindableProperty<string> NameProperty => _nameProperty;
 
         public BindablePropertyViewModel()
         {
-            NameProperty.Value = "Default Name";
+            _nameProperty.Value = "Default Name";
+        }
+
+        public void OnNameInputChanged(string value)
+        {
+            _nameProperty.Value = value;
         }
     }
 }
