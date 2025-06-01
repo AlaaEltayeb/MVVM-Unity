@@ -1,14 +1,12 @@
 #nullable enable
-using System.Collections.Generic;
+using MVVM.Unity.Binding.BindableProperty;
 using UnityEngine;
 
 namespace MVVM.Unity.Binding.UIBinder
 {
     public abstract class UIBinder<TUI, TValue> : MonoBehaviour where TUI : Component
     {
-        //public BindableProperty<TValue> Property = new();
-
-        protected HashSet<UIChanged<TValue>> Callbacks = new();
+        public BindableProperty<TValue> Property = new();
 
         protected TUI UIElement;
 
@@ -19,26 +17,18 @@ namespace MVVM.Unity.Binding.UIBinder
 
         protected virtual void Start()
         {
-            //Property.StartObserving(OnViewModelChanged);
+            Property.StartObserving(OnViewModelChanged);
             SetupUIListener();
         }
 
         protected virtual void OnDestroy()
         {
-            //Property.StopObserving(OnViewModelChanged);
+            Property.StopObserving(OnViewModelChanged);
             RemoveUIListner();
         }
 
         protected abstract void OnViewModelChanged(TValue oldValue, TValue newValue);
         protected abstract void SetupUIListener();
         protected abstract void RemoveUIListner();
-
-        public virtual void Bind(UIChanged<TValue> callback)
-        {
-            Callbacks ??= new HashSet<UIChanged<TValue>>();
-
-            if (!Callbacks.Add(callback))
-                return;
-        }
     }
 }

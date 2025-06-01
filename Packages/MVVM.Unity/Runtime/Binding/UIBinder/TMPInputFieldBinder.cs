@@ -19,13 +19,8 @@ namespace MVVM.Unity.Binding.UIBinder
 
         private void OnUIChanged(string newValue)
         {
-            //if (Property.Value != newValue)
-            //    Property.SetValue(ref newValue);
-
-            foreach (var callback in Callbacks)
-            {
-                callback?.Invoke(newValue);
-            }
+            if (Property.Value != newValue)
+                Property.SetValue(ref newValue);
         }
 
         protected override void RemoveUIListner()
