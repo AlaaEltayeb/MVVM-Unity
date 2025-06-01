@@ -17,6 +17,7 @@ namespace MVVM.Unity.MVVM
         private void InjectViewModelBase(TViewModel viewModel)
         {
             ViewModel = viewModel;
+            OnConstructed();
         }
 
         protected virtual void Awake()
@@ -26,6 +27,10 @@ namespace MVVM.Unity.MVVM
         private void Start()
         {
             Bind();
+        }
+
+        protected virtual void OnConstructed()
+        {
         }
 
         protected virtual void Bind()
