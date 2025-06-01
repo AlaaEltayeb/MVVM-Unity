@@ -3,7 +3,8 @@
     "rootNamespace": "MVVM.Unity.Demo",
     "references": [
         "VContainer",
-        "MVVM.Unity.Runtime"
+        "MVVM.Unity.Runtime",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

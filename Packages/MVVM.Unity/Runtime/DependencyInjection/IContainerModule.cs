@@ -1,6 +1,6 @@
 using VContainer;
 
-namespace MVVM.Unity.Demo.DependencyInjection
+namespace MVVM.Unity.DependencyInjection
 {
     public interface IContainerModule
     {

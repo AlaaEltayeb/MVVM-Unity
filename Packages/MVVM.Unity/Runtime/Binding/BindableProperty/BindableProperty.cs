@@ -28,10 +28,8 @@ namespace MVVM.Unity.Binding.BindableProperty
         {
             _callbacks ??= new HashSet<BindablePropertyChanged<TValue>>();
 
-            if (_callbacks.Contains(callback))
+            if (!_callbacks.Add(callback))
                 return;
-
-            _callbacks.Add(callback);
 
             if (invokeOnObserve)
             {

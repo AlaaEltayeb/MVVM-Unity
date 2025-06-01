@@ -6,7 +6,8 @@ namespace MVVM.Unity.Binding.UIBinder
 {
     public abstract class UIBinder<TUI, TValue> : MonoBehaviour where TUI : Component
     {
-        public BindableProperty<TValue>? Property;
+        public BindableProperty<TValue> Property = new();
+
         protected TUI UIElement;
 
         protected virtual void Awake()
@@ -16,18 +17,12 @@ namespace MVVM.Unity.Binding.UIBinder
 
         protected virtual void Start()
         {
-            if (Property == null)
-                return;
-
             Property.StartObserving(OnViewModelChanged);
             SetupUIListener();
         }
 
         protected virtual void OnDestroy()
         {
-            if (Property == null)
-                return;
-
             Property.StopObserving(OnViewModelChanged);
             RemoveUIListner();
         }

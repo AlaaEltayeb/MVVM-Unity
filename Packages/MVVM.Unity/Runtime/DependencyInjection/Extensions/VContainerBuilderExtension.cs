@@ -1,8 +1,7 @@
 using Microsoft.Extensions.Logging;
-using MVVM.Unity.Demo.DependencyInjection;
 using VContainer;
 
-namespace MVVM.Unity.Demo.Extensions
+namespace MVVM.Unity.DependencyInjection.Extensions
 {
     public static class VContainerBuilderExtension
     {

@@ -1,11 +1,10 @@
 using Microsoft.Extensions.Logging;
-using MVVM.Unity.Demo.DependencyInjection;
-using MVVM.Unity.Demo.Extensions;
-using MVVM.Unity.Logging;
+using MVVM.Unity.DependencyInjection;
+using MVVM.Unity.DependencyInjection.Extensions;
 using System.Collections.Generic;
 using VContainer;
 
-namespace MVVM.Unity.Demo.Logging
+namespace MVVM.Unity.Logging
 {
     public sealed class LoggingContainerModule : IContainerModule
     {

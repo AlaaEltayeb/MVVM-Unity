@@ -1,5 +1,5 @@
-using MVVM.Unity.Demo.Extensions;
-using MVVM.Unity.Demo.Logging;
+using MVVM.Unity.DependencyInjection.Extensions;
+using MVVM.Unity.Logging;
 using MVVM.Unity.PersistentObjects;
 using VContainer;
 using VContainer.Unity;

@@ -19,8 +19,8 @@ namespace MVVM.Unity.Binding.UIBinder
 
         private void OnUIChanged(string newValue)
         {
-            if (Property != null && Property.Value != newValue)
-                Property.SetValueWithoutNotify(ref newValue);
+            if (Property.Value != newValue)
+                Property.SetValue(ref newValue);
         }
 
         protected override void RemoveUIListner()

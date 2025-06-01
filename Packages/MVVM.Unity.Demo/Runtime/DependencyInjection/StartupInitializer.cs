@@ -2,7 +2,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using VContainer.Unity;
 
-namespace MVVM.Unity.Demo
+namespace MVVM.Unity.Demo.DependencyInjection
 {
     /// <summary>
     /// Responsible for Bootstrapping
