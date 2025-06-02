@@ -53,10 +53,5 @@ namespace MVVM.Unity.MVVM
 
             return propertyInfo.GetValue(this) as IViewModel;
         }
-
-        public void Dispose()
-        {
-            Destroy(gameObject);
-        }
     }
 }

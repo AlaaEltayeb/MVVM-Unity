@@ -1,8 +1,6 @@
-using System;
-
 namespace MVVM.Unity.MVVM
 {
-    public interface IView : IDisposable
+    public interface IView
     {
         IViewModel GetViewModel();
     }
